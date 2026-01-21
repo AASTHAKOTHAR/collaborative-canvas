@@ -3,7 +3,6 @@
 A real-time collaborative drawing application where multiple users can draw simultaneously on a shared canvas.  
 Built using the **HTML5 Canvas API** on the frontend and **Node.js + Socket.IO** on the backend.
 
-This project was developed as part of an interview assignment with a focus on correctness, real-time synchronization, and clear architecture.
 
 ---
 
