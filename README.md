@@ -10,10 +10,10 @@ This project was developed as part of an interview assignment with a focus on co
 ## 🔗 Repository & Live Demo
 
 - **GitHub Repository:**  
-  https://github.com/<your-username>/collaborative-canvas
+  https://github.com/AASTHAKOTHAR/collaborative-canvas
 
 - **Live Demo:**  
-  https://<your-deployed-app-url>
+https://collaborative-canvas-n17a.onrender.com/
 
 The demo works immediately in the browser.  
 No installation or setup is required for users.
@@ -65,7 +65,10 @@ From the project root directory, run:
 ```bash
 npm install
 npm start
-## 🧪 How to Test with Multiple Users
+Then open the application in your browser:
+http://localhost:3000
+
+### 🧪 How to Test with Multiple Users
 
 You can test real-time collaboration using any of the following methods:
 
@@ -81,7 +84,7 @@ While testing, you should observe:
 
 ---
 
-## ⚠️ Known Limitations / Bugs
+###⚠️ Known Limitations / Bugs
 
 - **In-memory storage only**  
   Canvas state is not persisted. Restarting the server clears the drawing.
@@ -97,7 +100,7 @@ While testing, you should observe:
 
 ---
 
-## ⏱️ Time Spent on the Project
+###⏱️ Time Spent on the Project
 
 Approximately **5–6 hours**, including:
 - Architecture design
