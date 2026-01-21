@@ -1,48 +1,109 @@
-# Collaborative Canvas (Real-time)
+# 🎨 Collaborative Canvas — Real-Time Multi-User Drawing
 
-Real-time multi-user drawing canvas using **HTML5 Canvas API** on the frontend and **Socket.IO** on the backend.
+A real-time collaborative drawing application where multiple users can draw simultaneously on a shared canvas.  
+Built using the **HTML5 Canvas API** on the frontend and **Node.js + Socket.IO** on the backend.
 
-## Setup
+This project was developed as part of an interview assignment with a focus on correctness, real-time synchronization, and clear architecture.
 
-From the project root:
+---
+
+## 🔗 Repository & Live Demo
+
+- **GitHub Repository:**  
+  https://github.com/<your-username>/collaborative-canvas
+
+- **Live Demo:**  
+  https://<your-deployed-app-url>
+
+The demo works immediately in the browser.  
+No installation or setup is required for users.
+
+---
+
+## ✨ Features
+
+- Real-time multi-user drawing on a shared canvas
+- Brush and eraser tools
+- Color picker and adjustable stroke width
+- Live cursor position sharing
+- Online users list
+- **Global undo / redo** (affects all connected users)
+- Late joiners receive the full canvas state
+- Server-authoritative canvas state
+
+---
+
+## 🧱 Tech Stack
+
+### Frontend
+- HTML
+- CSS
+- Vanilla JavaScript
+- HTML5 Canvas API
+
+### Backend
+- Node.js
+- Express
+- Socket.IO (WebSockets)
+
+> No drawing libraries or frontend frameworks are used.
+
+---
+
+## 🛠️ Setup Instructions (Local Development)
+
+These steps are required only if you want to run the project locally.
+
+### Prerequisites
+- Node.js (v16 or later)
+- npm (comes with Node.js)
+
+### Steps
+
+From the project root directory, run:
 
 ```bash
 npm install
 npm start
-```
+## 🧪 How to Test with Multiple Users
 
-Then open `http://localhost:3000` in your browser.
+You can test real-time collaboration using any of the following methods:
 
-## How to test with multiple users
+- Open the application in **two different browser tabs**
+- Open one **normal window** and one **incognito window**
+- Open the demo link on **two different browsers or devices**
 
-- **Two tabs**: open two browser tabs to `http://localhost:3000`
-- **Incognito**: open one normal window and one incognito window
-- **Multiple devices**: open the URL from another device on the same network (adjust host/port as needed)
-
-You should see:
-- Both users drawing simultaneously (updates stream on mousemove)
+While testing, you should observe:
+- Drawings appearing in real time across all users
+- Cursor positions updating live
 - Online users list updating on connect/disconnect
-- Live cursor positions for other users
-- Global undo/redo affecting everyone
+- Undo and redo actions affecting all users globally
 
-## Known limitations / bugs
+---
 
-- **In-memory only**: the server does not persist drawings. Restarting the server clears the canvas.
-- **No auth / identities**: users are identified only by their Socket.IO connection id.
-- **History trimming**: to avoid unbounded memory, the server trims very old strokes; extremely long sessions will lose oldest content.
-- **No pressure / smoothing**: stroke smoothing is intentionally minimal (straight segments between points).
+## ⚠️ Known Limitations / Bugs
 
-## Time spent
+- **In-memory storage only**  
+  Canvas state is not persisted. Restarting the server clears the drawing.
 
-~5 hours (implementation + documentation).
+- **No authentication or user accounts**  
+  Users are identified only by their Socket.IO connection ID.
 
-## Deployment (Vercel + WebSocket backend)
+- **History trimming**  
+  To prevent unbounded memory growth, very old strokes may be trimmed during long sessions.
 
-This app uses WebSockets (Socket.IO). Vercel is great for hosting the **static client**, but the **Socket.IO server**
-should be deployed to a platform that supports long-lived connections (Render/Fly/Railway/etc).
+- **Minimal stroke smoothing**  
+  Lines are rendered as straight segments between points for simplicity and clarity.
 
-High-level steps:
-- Deploy the **server** first (you get a backend URL).
-- Set `window.COLLAB_CANVAS_SOCKET_URL = "https://your-backend-url"` inside `client/index.html`.
-- Deploy the **client** folder to Vercel as a static site.
+---
+
+## ⏱️ Time Spent on the Project
+
+Approximately **5–6 hours**, including:
+- Architecture design
+- Frontend and backend implementation
+- Real-time synchronization logic
+- Global undo/redo handling
+- Testing with multiple users
+- Documentation
 
